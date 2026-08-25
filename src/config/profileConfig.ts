@@ -2,7 +2,7 @@ import type { ProfileConfig } from "../types/config";
 
 // 个人资料配置
 export const profileConfig: ProfileConfig = {
-	avatar: "assets/images/avatar.webp", // 临时占位，后续替换为个人头像
+	avatar: "assets/images/preview.webp", // 临时占位，后续替换为个人头像
 	name: "xushen",
 	bio: "计算机科学与技术 · 预计 2028 年毕业",
 	typewriter: {

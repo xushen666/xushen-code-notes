@@ -122,7 +122,7 @@ export const siteConfig: SiteConfig = {
 	banner: {
 		// 支持单张图片或图片数组，当数组长度 > 1 时自动启用轮播
 		src: {
-			desktop: ["/assets/desktop-banner/1.webp"], // 临时占位，后续替换为个人 Banner
+			desktop: ["/assets/desktop-banner/5.webp"], // 临时占位，后续替换为个人 Banner
 			mobile: ["/assets/mobile-banner/1.webp"], // 临时占位，后续替换为个人 Banner
 		}, // 使用本地横幅图片
 
