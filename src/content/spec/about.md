@@ -18,4 +18,4 @@
 - GitHub：[xushen666](https://github.com/xushen666)
 - 邮箱：[871446573@qq.com](mailto:871446573@qq.com)
 
-暂不公开完整简历、城市等个人信息。其他社交账号将在需要时选择性补充。
+
