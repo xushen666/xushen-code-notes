@@ -1,6 +1,3 @@
-// Project data configuration file
-// Used to manage data for the project display page
-
 export interface Project {
 	id: string;
 	title: string;
@@ -19,87 +16,46 @@ export interface Project {
 	showImage?: boolean;
 }
 
+// 以下三张卡片是内容占位；补充真实项目资料后再添加仓库地址和截图。
 export const projectsData: Project[] = [
 	{
-		id: "mizuki",
-		title: "Mizuki",
-		description:
-			"A next-gen Material Design 3 blog theme built with Astro, featuring i18n, dark mode, and responsive design.",
-		image: "/assets/projects/mizuki.webp",
+		id: "project-placeholder-1",
+		title: "项目一（待补充）",
+		description: "待补充项目名称、背景、个人职责、实现过程与结果。",
+		image: "",
 		category: "web",
-		techStack: ["Astro", "TypeScript", "Tailwind CSS", "Svelte"],
-		status: "completed",
-		sourceCode: "https://github.com/LyraVoid/Mizuki",
-		visitUrl: "https://mizuki.mysqil.com",
-		startDate: "2024-01-01",
-		endDate: "2024-06-01",
-		featured: true,
-		tags: ["Blog", "Theme", "Open Source"],
-	},
-	{
-		id: "folkpatch",
-		title: "FolkPatch",
-		description:
-			"A kernel-level ROOT solution based on KernelPatch, with polished UI, APM module system, and KPM kernel module support.",
-		image: "/assets/projects/folkpatch.webp",
-		category: "mobile",
-		techStack: ["Kotlin", "Rust", "C++", "Java"],
+		techStack: [],
 		status: "in-progress",
-		sourceCode: "https://github.com/LyraVoid/FolkPatch",
-		visitUrl: "https://fp.mysqil.com",
-		startDate: "2024-03-01",
-		featured: true,
-		tags: ["Android", "Root", "Kernel"],
-	},
-	{
-		id: "folktool",
-		title: "FolkTool",
-		description:
-			"A fast ROOT flashing tool for FolkPatch with a graphical interface and automated operations, simplifying the complex flashing process.",
-		image: "",
-		category: "desktop",
-		techStack: ["Flutter", "Dart", "C++", "CMake"],
-		status: "completed",
-		sourceCode: "https://github.com/LyraVoid/FolkTool",
-		startDate: "2026-02-01",
-		endDate: "2026-02-28",
-		tags: ["Android", "Tool", "Desktop"],
+		startDate: "待补充",
+		tags: ["待补充"],
 		showImage: false,
 	},
 	{
-		id: "folkadb",
-		title: "FolkADB",
-		description:
-			"A portable ADB/Fastboot tool written in C, featuring interactive CLI, Tab completion, drag-and-drop module installation, and Shizuku activation.",
+		id: "project-placeholder-2",
+		title: "项目二（待补充）",
+		description: "待补充项目名称、技术栈、项目截图与可公开链接。",
 		image: "",
-		category: "desktop",
-		techStack: ["C"],
-		status: "completed",
-		sourceCode: "https://github.com/LyraVoid/FolkADB",
-		startDate: "2025-06-01",
-		endDate: "2026-01-01",
-		tags: ["Android", "ADB", "CLI"],
+		category: "other",
+		techStack: [],
+		status: "planned",
+		startDate: "待补充",
+		tags: ["待补充"],
 		showImage: false,
 	},
 	{
-		id: "folksplash",
-		title: "FolkSplash",
-		description:
-			"A web-based splash.img visualizer for OPPO/Realme/OnePlus devices, supporting unpack, preview, replace, and repack.",
+		id: "project-placeholder-3",
+		title: "项目三（待补充）",
+		description: "待补充项目名称、核心亮点、复盘文章与演示材料。",
 		image: "",
-		category: "web",
-		techStack: ["React", "TypeScript", "Vite", "Material-UI", "Zustand"],
-		status: "completed",
-		sourceCode: "https://github.com/LyraVoid/FolkSplash",
-		visitUrl: "https://splash.mysqil.com",
-		startDate: "2025-09-01",
-		endDate: "2025-10-01",
-		tags: ["Android", "Tool", "Frontend"],
+		category: "other",
+		techStack: [],
+		status: "planned",
+		startDate: "待补充",
+		tags: ["待补充"],
 		showImage: false,
 	},
 ];
 
-// Get project statistics
 export const getProjectStats = () => {
 	const total = projectsData.length;
 	const completed = projectsData.filter((p) => p.status === "completed").length;
@@ -110,34 +66,22 @@ export const getProjectStats = () => {
 
 	return {
 		total,
-		byStatus: {
-			completed,
-			inProgress,
-			planned,
-		},
+		byStatus: { completed, inProgress, planned },
 	};
 };
 
-// Get projects by category
 export const getProjectsByCategory = (category?: string) => {
-	if (!category || category === "all") {
-		return projectsData;
-	}
+	if (!category || category === "all") return projectsData;
 	return projectsData.filter((p) => p.category === category);
 };
 
-// Get featured projects
-export const getFeaturedProjects = () => {
-	return projectsData.filter((p) => p.featured);
-};
+export const getFeaturedProjects = () =>
+	projectsData.filter((p) => p.featured);
 
-// Get all tech stacks
 export const getAllTechStack = () => {
 	const techSet = new Set<string>();
-	projectsData.forEach((project) => {
-		project.techStack.forEach((tech) => {
-			techSet.add(tech);
-		});
-	});
+	for (const project of projectsData) {
+		for (const tech of project.techStack) techSet.add(tech);
+	}
 	return Array.from(techSet).sort();
 };
