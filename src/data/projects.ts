@@ -19,17 +19,17 @@ export interface Project {
 // 以下三张卡片是内容占位；补充真实项目资料后再添加仓库地址和截图。
 export const projectsData: Project[] = [
 	{
-		id: "agent-assistant",
-		title: "智能 Agent 助手",
+		id: "travel-agent",
+		title: "智能旅行助手",
 		description:
-			"基于 LangChain 和 FastAPI 开发的智能助手。我负责对话流程、工具调用和接口设计，并完成核心功能验证。",
-		image: "/assets/projects/agent-assistant.webp",
+			"基于 LangChain 和 FastAPI 开发的智能旅行助手。",
+		image: "/assets/projects/travel-agent.webp",
 		category: "web",
 		techStack: ["Python", "LangChain", "FastAPI"],
 		status: "completed",
-		sourceCode: "https://github.com/xushen666/仓库名",
+		sourceCode: "https://github.com/xushen666/travel-planner",
 		visitUrl: "https://项目演示地址.example.com",
-		startDate: "2026-06",
+		startDate: "2026-07",
 		endDate: "2026-08",
 		featured: true,
 		tags: ["Agent", "LLM"],
